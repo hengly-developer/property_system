@@ -15,6 +15,7 @@ class CreateBuildingTable extends Migration
     {
         Schema::create('tbl_buildings', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('property_id');
             $table->string('name', 100)->unique();
             $table->string('description', 255)->nullable();
             $table->float('number_of_floor')->nullable();
