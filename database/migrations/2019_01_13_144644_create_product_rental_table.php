@@ -23,6 +23,8 @@ class CreateProductRentalTable extends Migration
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamps();
+            // $table->foreign('room_rental_id')->references('id')->on('tbl_rooms_rentals')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('product_id')->references('id')->on('tbl_products')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

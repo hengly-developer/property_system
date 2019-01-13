@@ -15,7 +15,7 @@ class CreateBuildingTable extends Migration
     {
         Schema::create('tbl_buildings', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('property_id');
+            $table->unsignedInteger('property_id');
             $table->string('name', 100)->unique();
             $table->string('description', 255)->nullable();
             $table->float('number_of_floor')->nullable();
@@ -25,6 +25,7 @@ class CreateBuildingTable extends Migration
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamps();
+            // $table->foreign('property_id')->references('id')->on('tbl_properties')->onDelete('cascade')->onUpddate('cascade');
         });
     }
 

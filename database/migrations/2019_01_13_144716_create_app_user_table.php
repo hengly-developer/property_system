@@ -22,8 +22,10 @@ class CreateAppUserTable extends Migration
             $table->string('photo', 255)->nullable();
             $table->tinyInteger('is_admin')->default(0);
             $table->tinyInteger('is_supper_admin')->default(0);
+            $table->unsignedInteger('group_id')->default(0);
             $table->rememberToken();
             $table->timestamps();
+            // $table->foreign('group_id')->references('id')->on('tbl_groups')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
