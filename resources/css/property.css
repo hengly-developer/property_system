@@ -1,0 +1,13 @@
+
+.sidebar .sidebar-wrapper {
+    overflow: unset;
+}
+
+.sub-dropdown-menu {
+    display: none;
+}
+
+.dropdown-toggle:hover {
+    display: block;
+    background: red;
+}

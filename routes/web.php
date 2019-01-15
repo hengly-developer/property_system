@@ -13,20 +13,42 @@
 
 /** BackEnd */
 Route::prefix('admin')->group(function() {
-    Route::get('/', function () {
-       return 'Admin';
-    });
+    /** Dashboard */
+    Route::get('/', 'Admin\Dashboard\DashboardController@dashboard');
 
-    Route::get('user', function () {
-       return 'User';
-    });
+    /** Property  */
+    Route::get('/property', 'Admin\Property\PropertyController@property');
 
-    Route::get('user/{id}', function ($id) {
-        return 'User: ' . $id;
-    });
+    /** Property Type */
+    Route::get('/property/type', 'Admin\Property\PropertyTypeController@index');
+
+    /** Building */
+    Route::get('/property/building', 'Admin\Building\BuildingController@index');
+
+    /** Room */
+    Route::get('/property/building/room', 'Admin\Room\RoomController@index');
+
+    /** Category */
+    Route::get('/category', 'Admin\ProductCategory\ProductCategoryController@index');
+
+    /** Product */
+    Route::get('/product', 'Admin\Product\ProductController@index');
+
+    /** Service */
+    Route::get('/service', 'Admin\Service\ServiceController@index');
+
+    /** User */
+    Route::get('/user', 'Admin\User\UserController@index');
+
+    /** Group */
+    Route::get('/group', 'Admin\Group\GroupController@index');
+
+    /** Permission */
+    Route::get('/permission', 'Admin\Permission\PermissionController@index');
+
 
     // Relationship Example
-    Route::get('/property', function () {
+    /*Route::get('/property', function () {
         $buildings = \App\Models\Building\Building::all();
 
         foreach ($buildings as $building) {
@@ -42,7 +64,7 @@ Route::prefix('admin')->group(function() {
             echo $property->propertyType->name;
             echo '<br>';
         }
-    });
+    });*/
 });
 
 

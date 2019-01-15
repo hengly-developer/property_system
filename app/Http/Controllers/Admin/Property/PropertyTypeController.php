@@ -7,5 +7,8 @@ use App\Http\Controllers\Controller;
 
 class PropertyTypeController extends Controller
 {
-    //
+
+    public function index() {
+        return view('admin.property.property-type');
+    }
 }
