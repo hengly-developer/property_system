@@ -31,7 +31,7 @@
                     <span class="icon-bar bar2"></span>
                     <span class="icon-bar bar3"></span>
                 </button>
-                <a class="navbar-brand" href="#">{{ __('lang.dashboard') }}</a>
+                <a class="navbar-brand" href="{{ action('Admin\Dashboard\DashboardController@dashboard') }}">{{ __('lang.dashboard') }}</a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -57,7 +57,7 @@
                             <b class="fa fa-caret-down"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ action('Admin\Property\PropertyController@property') }}">{{ __('lang.properties') }}</a></li>
+                            <li><a href="{{ action('Admin\Property\PropertyController@index') }}">{{ __('lang.properties') }}</a></li>
                             <li><a href="{{ action('Admin\Property\PropertyTypeController@index') }}">{{ __('lang.property_type') }}</a></li>
                             <li><a href="{{ action('Admin\Building\BuildingController@index') }}">{{ __('lang.building') }}</a></li>
                             <li><a href="{{ action('Admin\Room\RoomController@index') }}">{{ __('lang.room') }}</a></li>
@@ -71,11 +71,8 @@
                             <b class="fa fa-caret-down"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="">{{ __('lang.active_tenant') }}</a></li>
-                            <li><a href="">{{ __('lang.terminate_tenant') }}</a></li>
-                            <li><a href="">{{ __('lang.room_rental') }}</a></li>
-                            <li><a href="">{{ __('lang.room_product_rental') }}</a></li>
-                            <li><a href="">{{ __('lang.room_service_rental') }}</a></li>
+                            <li><a href="{{ action('Admin\Tenant\TenantController@index') }}">{{ __('lang.tenant') }}</a></li>
+                            <li><a href="{{ action('Admin\RoomRental\RoomRentalController@index') }}">{{ __('lang.room_rental') }}</a></li>
                         </ul>
                     </li>
 
@@ -86,8 +83,8 @@
                             <b class="fa fa-caret-down"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="">{{ __('lang.invoice') }}</a></li>
-                            <li><a href="">{{ __('lang.invoice_report') }}</a></li>
+                            <li><a href="{{ action('Admin\Invoice\InvoiceController@index') }}">{{ __('lang.invoice') }}</a></li>
+                            <li><a href="{{ action('Admin\Invoice\InvoiceReportController@index') }}">{{ __('lang.invoice_report') }}</a></li>
                         </ul>
                     </li>
 
@@ -98,7 +95,8 @@
                             <b class="fa fa-caret-down"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="">{{ __('lang.currency') }}</a></li>
+                            <li><a href="{{ action('Admin\Floor\FloorController@index') }}">{{ __('lang.floor') }}</a></li>
+                            <li><a href="{{ action('Admin\Currency\CurrencyController@index') }}">{{ __('lang.currency') }}</a></li>
                             <li><a href="{{ action('Admin\User\UserController@index') }}">{{ __('lang.user') }}</a></li>
                             <li><a href="{{ action('Admin\Group\GroupController@index') }}">{{ __('lang.group') }}</a></li>
                             <li><a href="{{ action('Admin\Permission\PermissionController@index') }}">{{ __('lang.permission') }}</a></li>
@@ -142,33 +140,6 @@
         @yield('content')
     </div>
 
-    <footer class="footer">
-        <div class="container-fluid">
-            <nav class="pull-left">
-                <ul>
-
-                    <li>
-                        <a href="http://www.creative-tim.com">
-                            Creative Tim
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://blog.creative-tim.com">
-                            Blog
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.creative-tim.com/license">
-                            Licenses
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="copyright pull-right">
-                &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
-            </div>
-        </div>
-    </footer>
     @yield('script')
 </div>
 </body>

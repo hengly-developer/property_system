@@ -11,3 +11,8 @@
     display: block;
     background: red;
 }
+
+input.form-control, textarea.form-control, select.form-control {
+    color: #333;
+    border: 1px solid #eee;
+}

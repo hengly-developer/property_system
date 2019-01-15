@@ -11,4 +11,16 @@ class RoomController extends Controller
     public function index() {
         return view('admin.room.room');
     }
+
+    public function add() {
+        return view('admin.room.room.new');
+    }
+
+    public function edit($id) {
+        return view('admin.room.room.edit');
+    }
+
+    public function save() {
+
+    }
 }

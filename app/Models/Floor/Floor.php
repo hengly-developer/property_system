@@ -20,4 +20,8 @@ class Floor extends Model
     public function room() {
         return $this->hasMany('App\Models\Room\Room');
     }
+
+    public function building() {
+        return $this->hasMany('App\Models\Building\Building');
+    }
 }

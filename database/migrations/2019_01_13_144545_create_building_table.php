@@ -21,6 +21,7 @@ class CreateBuildingTable extends Migration
             $table->float('number_of_floor')->nullable();
             $table->double('building_size')->nullable();
             $table->double('land_size')->nullable();
+            $table->string('gps', 100)->nullable();
             $table->tinyInteger('is_active')->default(1);
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();

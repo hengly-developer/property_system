@@ -21,6 +21,7 @@ class CreateRoomTable extends Migration
             $table->integer('floor_number');
             $table->tinyInteger('is_rented')->default(0);
             $table->double('room_size')->nullable();
+            $table->string('description', 255)->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamps();

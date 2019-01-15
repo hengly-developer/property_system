@@ -8,8 +8,15 @@ use App\Http\Controllers\Controller;
 class PropertyController extends Controller
 {
 
-    public function property() {
-        echo 'work';
+    public function index() {
         return view('admin.property.property');
+    }
+
+    public function add() {
+        return view('admin.property.new');
+    }
+
+    public function edit() {
+        return view('admin.property.edit');
     }
 }
