@@ -11,4 +11,12 @@ class FloorController extends Controller
     public function index() {
         return view('admin.floor.floor');
     }
+
+    public function add() {
+        return view('admin.floor.new');
+    }
+
+    public function save() {
+
+    }
 }

@@ -11,4 +11,16 @@ class ProductController extends Controller
     public function index() {
         return view('admin.product.product');
     }
+
+    public function add() {
+        return view('admin.product.new');
+    }
+
+    public function edit($id) {
+        return view('admin.product.edit');
+    }
+
+    public function save() {
+
+    }
 }

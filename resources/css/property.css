@@ -16,3 +16,13 @@ input.form-control, textarea.form-control, select.form-control {
     color: #333;
     border: 1px solid #eee;
 }
+
+.form-control-short {
+    width: 10%;
+    display: inline !important;
+}
+
+
+.w-25 {
+    width: 25%;
+}

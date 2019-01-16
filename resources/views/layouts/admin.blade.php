@@ -72,7 +72,6 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ action('Admin\Tenant\TenantController@index') }}">{{ __('lang.tenant') }}</a></li>
-                            <li><a href="{{ action('Admin\RoomRental\RoomRentalController@index') }}">{{ __('lang.room_rental') }}</a></li>
                         </ul>
                     </li>
 
@@ -83,7 +82,7 @@
                             <b class="fa fa-caret-down"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ action('Admin\Invoice\InvoiceController@index') }}">{{ __('lang.invoice') }}</a></li>
+                            <li><a href="{{ action('Admin\RoomRental\RoomRentalController@index') }}">{{ __('lang.invoice') }}</a></li>
                             <li><a href="{{ action('Admin\Invoice\InvoiceReportController@index') }}">{{ __('lang.invoice_report') }}</a></li>
                         </ul>
                     </li>

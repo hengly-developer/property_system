@@ -21,6 +21,7 @@ class CreateTenantTable extends Migration
             $table->string('code', 15)->unique();
             $table->string('address', 255)->nullable();
             $table->string('national_id_card', 30)->unique();
+            $table->string('attachment', 255)->nullable();
             $table->string('photo', 255)->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();

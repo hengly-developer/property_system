@@ -19,6 +19,8 @@ class CreateProductTable extends Migration
             $table->string('name', 50)->unique();
             $table->string('description', 255)->nullable();
             $table->double('price')->default(0);
+            $table->tinyInteger('static_speed')->default(0);
+            $table->unsignedInteger('speed')->default(0);
             $table->tinyInteger('is_active')->default(1);
             $table->timestamps();
         });

@@ -11,6 +11,7 @@
                     <form action="{{ action('Admin\Room\RoomController@save') }}" method="POST">
                         <div class="panel-body">
                             {{ csrf_field() }}
+                            <br><br><br>
                             <label for="room-number">{{ __('lang.room_number') }} <span class="text-danger">*</span></label>
                             <input type="text" id="room-number" name="room-number" class="form-control" required /><br>
                             <label for="property">{{ __('lang.property') }}</label>

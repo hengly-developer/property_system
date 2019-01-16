@@ -1,17 +1,16 @@
 @extends('layouts.admin')
-@section('title', __('lang.new_room'))
+@section('title', __('lang.edit_room'))
 @section('content')
     <div class="row">
         <div class="col-xs-12">
             <div class="col-xs-12">
                 <div class="panel panel-info">
                     <div class="col-md-12 panel-heading">
-                        <h5>{{ __('lang.new_room') }}</h5>
+                        <h5>{{ __('lang.edit_room') }}</h5>
                     </div>
                     <form action="{{ action('Admin\Room\RoomController@save') }}" method="POST">
                         <div class="panel-body">
                             {{ csrf_field() }}
-                            <br><br><br>
                             <label for="room-number">{{ __('lang.room_number') }} <span class="text-danger">*</span></label>
                             <input type="text" id="room-number" name="room-number" class="form-control" required /><br>
                             <label for="property">{{ __('lang.property') }}</label>

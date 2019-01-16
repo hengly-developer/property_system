@@ -40,11 +40,6 @@ Route::prefix('admin')->group(function() {
     Route::get('/property/building/room/edit/{id}', 'Admin\Room\RoomController@edit');
     Route::post('/property/building/room', 'Admin\Room\RoomController@save');
 
-    /** Room Rental */
-    Route::get('/property/building/room/rental', 'Admin\RoomRental\RoomRentalController@index');
-    Route::get('/property/building/room/rental/new', 'Admin\RoomRental\RoomRentalController@add');
-    Route::get('/property/building/room/rental/edit/{id}', 'Admin\RoomRental\RoomRentalController@edit');
-    Route::post('/property/building/room/rental', 'Admin\RoomRental\RoomRentalController@save');
 
     /** Product rental */
     Route::get('/property/building/room/product/rental', 'Admin\ProductRental\ProductRentalController@index');
@@ -61,7 +56,6 @@ Route::prefix('admin')->group(function() {
     /** Floor */
     Route::get('/floor', 'Admin\Floor\FloorController@index');
     Route::get('/floor/new', 'Admin\Floor\FloorController@add');
-    Route::get('/floor/edit/{id}', 'Admin\Floor\FloorController@edit');
     Route::post('/floor', 'Admin\Floor\FloorController@save');
 
     /** Category */
@@ -80,7 +74,7 @@ Route::prefix('admin')->group(function() {
     Route::get('/service', 'Admin\Service\ServiceController@index');
     Route::get('/service/new', 'Admin\Service\ServiceController@add');
     Route::get('/service/edit/{id}', 'Admin\Service\ServiceController@edit');
-    Route::post('/service', 'Admin\Service\ServiceController@index');
+    Route::post('/service', 'Admin\Service\ServiceController@save');
 
     /** Tenant */
     Route::get('/tenant', 'Admin\Tenant\TenantController@index');
@@ -95,10 +89,10 @@ Route::prefix('admin')->group(function() {
     Route::post('/currency', 'Admin\Currency\CurrencyController@save');
 
     /** Invoice */
-    Route::get('/invoice', 'Admin\Invoice\InvoiceController@index');
-    Route::get('/invoice/new', 'Admin\Invoice\InvoiceController@add');
-    Route::get('/invoice/edit/{id}', 'Admin\Invoice\InvoiceController@edit');
-    Route::post('/invoice', 'Admin\Invoice\InvoiceController@save');
+    Route::get('/invoice', 'Admin\RoomRental\RoomRentalController@index');
+    Route::get('/invoice/new', 'Admin\RoomRental\RoomRentalController@add');
+    Route::get('/invoice/edit/{id}', 'Admin\RoomRental\RoomRentalController@edit');
+    Route::post('/invoice', 'Admin\RoomRental\RoomRentalController@save');
 
     /** Invoice Report */
     Route::get('/report/invoice', 'Admin\Invoice\InvoiceReportController@index');
