@@ -4965,3 +4965,15 @@ input.form-control, textarea.form-control, select.form-control {
 .w-25 {
     width: 25%;
 }
+
+.w-5 {
+    width: 5%;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.inline {
+    display: inline !important;
+}

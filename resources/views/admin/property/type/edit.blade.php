@@ -8,13 +8,20 @@
                     <div class="col-md-12 panel-heading">
                         <h5>{{ __('lang.edit_property_type') }}</h5>
                     </div>
-                    <form action="{{ action('Admin\Property\PropertyTypeController@save') }}">
+                    <form action="{{ action('Admin\Property\PropertyTypeController@save') }}" method="POST">
                         <div class="panel-body">
                             {{ csrf_field() }}
+                            <br><br><br>
+                            <input type="hidden" name="id" value="{{ $type->id }}">
+                            <input type="hidden" name="_edit">
                             <label for="name">{{ __('lang.title') }} <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" required /><br>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ $type->name }}"/>
+                            <p>
+                                <small class="text-danger">{{ $errors->first('name') }}</small>
+                            </p>
+                            <br>
                             <label for="description">{{ __('lang.description') }}</label>
-                            <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                            <textarea name="description" id="description" cols="30" rows="10" class="form-control">{{ $type->description }}</textarea>
                         </div>
                         <div class="panel-footer text-right">
                             <a href="{{ action('Admin\Property\PropertyTypeController@index') }}" class="btn btn-sm btn-danger">{{ __('lang.cancel') }}</a>

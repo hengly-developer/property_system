@@ -23,10 +23,14 @@ Route::prefix('admin')->group(function() {
     Route::get('/property/type', 'Admin\Property\PropertyTypeController@index');
     Route::get('/property/type/new', 'Admin\Property\PropertyTypeController@add');
     Route::get('/property/type/edit/{id}', 'Admin\Property\PropertyTypeController@edit');
+    Route::post('/property/type', 'Admin\Property\PropertyTypeController@save');
+    Route::get('/property/type/list', 'Admin\Property\PropertyTypeController@getList');
+    Route::post('/property/type/deactivate', 'Admin\Property\PropertyTypeController@deactivate');
+
 
     Route::get('/property/new', 'Admin\Property\PropertyController@add');
     Route::get('/property/edit/{id}', 'Admin\Property\PropertyController@edit');
-    Route::post('/property', 'Admin\Property\PropertyTypeController@save');
+    Route::post('/property', 'Admin\Property\PropertyController@save');
 
     /** Building */
     Route::get('/property/building', 'Admin\Building\BuildingController@index');

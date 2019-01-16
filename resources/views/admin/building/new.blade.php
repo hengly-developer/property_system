@@ -11,10 +11,11 @@
                     <form action="{{ action('Admin\Building\BuildingController@save') }}" method="POST">
                         <div class="panel-body">
                             {{ csrf_field() }}
+                            <br><br><br>
                             <label for="name">{{ __('lang.title') }} <span class="text-danger">*</span></label>
-                            <input type="text" name="name" class="form-control" required /><br>
+                            <input type="text" id="name" name="name" class="form-control" required /><br>
                             <label for="property">{{ __('lang.property') }}</label>
-                            <select name="property" id="" class="form-control"></select> <br>
+                            <select name="property" id="property" class="form-control"></select> <br>
                             <label for="land-size">{{ __('lang.land_size') }}</label>
                             <input type="text" id="land-size" name="land-size" class="form-control"><br>
                             <label for="building-size">{{ __('lang.building_size') }}</label>

@@ -15,7 +15,6 @@ const mix = require('laravel-mix');
    .sass('resources/sass/app.scss', 'public/css');*/
 
 mix.combine([
-        'resources/peper/js/jquery.min.js',
         'resources/peper/js/bootstrap.min.js',
         'resources/peper/js/bootstrap-notify.js',
         'resources/peper/js/paper-dashboard.js'
