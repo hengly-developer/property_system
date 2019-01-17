@@ -25,7 +25,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="panel-body row">
-                        <div id="property-type"></div>
+                        <div id="property"></div>
                     </div>
                 </div>
             </div>
@@ -37,10 +37,55 @@
     <script type="text/javascript" src="{{ asset('js/property.js') }}"></script>
     <script type="text/javascript">
         var options = {
-            target: '#property-type',
-            url: '/admin/property/type/list',
-            deactivate_url: '/admin/property/type/deactivate',
-            page_size: 20,
+            token: '{{ csrf_token() }}',
+            target: '#property',
+            url: '/admin/property/list',
+            deactivate_url: '/admin/property/deactivate',
+            page_size: 5,
+            columns: [
+                {
+                    formatter: 'rownum',
+                    align: 'center',
+                    width: 40
+                },
+                {
+                    title: '{{ __('lang.property_type') }}',
+                    field: 'property_type.name'
+                },
+                {
+                    title: "{{ __('lang.name') }}",
+                    field:"name",
+                    headerFilter: true
+                },
+                {
+                    title: '{{ __('lang.gps') }}',
+                    field: 'gps',
+                    headerFilter: true
+                },
+                {
+                    title: "{{ __('lang.description') }}",
+                    field:"description",
+                    align:"right",
+                    sorter:"string",
+                    headerFilter: true
+                },
+                {
+                    title: '{{ __('lang.date') }}',
+                    field: 'created_at',
+                    align: 'center',
+                    visible: true
+                },
+                {
+                    title: '{{ __('lang.edit') }}',
+                    formatter: function (e) {
+                        console.log(e.getData().id);
+                        return '<a href="/admin/property/edit/' + e.getData().id + '"><i class="fa fa-pencil"></i></a>';
+                    },
+                    width: 50,
+                    align: 'center',
+                    headerSort: false
+                }
+            ]
         };
 
         showList(options);

@@ -84,15 +84,15 @@ class PropertyTypeController extends Controller
             $closed = true;
         }
 
-        $redirect = 'admin/property/type';
-        $redirect = $closed ? $redirect : $redirect . '/new';
+        $id = null;
 
         if ($request->get('_edit')) {
-            $redirect = 'admin/property/type/edit/' . $request->get('id');
+            $id = $request->get('id');
+            $redirect = 'admin/property/type/edit/' . $id;
         }
 
         /** Form request */
-        $this->validations = Validator::make($request->all(), PropertyType::$validations, PropertyType::validationMessage());
+        $this->validations = Validator::make($request->all(), PropertyType::validationRule($id), PropertyType::validationMessage());
 
         if ($this->validations->fails()) {
             return redirect($redirect)->withErrors($this->validations->errors())->withInput();
@@ -105,6 +105,9 @@ class PropertyTypeController extends Controller
         $this->model->name = $request->get('name');
         $this->model->description = $request->get('description');
         $this->model->save();
+
+        $redirect = 'admin/property/type';
+        $redirect = $closed ? $redirect : $redirect . '/new';
 
         return redirect($redirect)->with('success', trans('validation.success'));
     }

@@ -13,7 +13,7 @@
                             {{ csrf_field() }}
                             <br><br><br>
                             <input type="hidden" name="id" value="{{ $type->id }}">
-                            <input type="hidden" name="_edit">
+                            <input type="hidden" name="_edit" value="1">
                             <label for="name">{{ __('lang.title') }} <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="name" name="name" value="{{ $type->name }}"/>
                             <p>

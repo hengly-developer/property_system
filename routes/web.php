@@ -30,7 +30,9 @@ Route::prefix('admin')->group(function() {
 
     Route::get('/property/new', 'Admin\Property\PropertyController@add');
     Route::get('/property/edit/{id}', 'Admin\Property\PropertyController@edit');
+    Route::get('/property/list', 'Admin\Property\PropertyController@getList');
     Route::post('/property', 'Admin\Property\PropertyController@save');
+    Route::post('/property/deactivate', 'Admin\Property\PropertyController@deactivate');
 
     /** Building */
     Route::get('/property/building', 'Admin\Building\BuildingController@index');

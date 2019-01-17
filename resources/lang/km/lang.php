@@ -81,7 +81,7 @@ return [
     'floor' => 'ជាន់',
     'new_room' => 'បន្ទប់ថ្មី',
     'edit_room' => 'កែប្រែបន្ទប់',
-    'select' => 'ជ្រើសរើស',
+    'select' => '--ជ្រើសរើស--',
     'city' => 'ខេត្ត/ក្រុង',
     'district' => 'ស្រុក/ខ័ណ្ឌ',
     'commune' => 'ឃុំ/សង្កាត់',
@@ -102,5 +102,9 @@ return [
     'new_currency' => 'បង្កើតរូបិយប័ណ្ណថ្មី',
     'edit_currency' => 'កែប្រែរូបិយប័ណ្ណ',
     'show' => 'បង្ហាញ',
-    'download' => 'ទាញយក'
+    'download' => 'ទាញយក',
+    'lat' => 'Latitude',
+    'lng' => 'Longitude',
+    'date' => 'កាលបរិច្ឆេទ',
+    'edit' => 'កែប្រែ'
 ];
