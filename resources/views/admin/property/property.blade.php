@@ -8,13 +8,7 @@
                     <div class="col-md-12 panel-heading">
                         <h5 class="pull-left">{{ __('lang.property') }}</h5>
                         <h5 class="pull-right">
-                            {{ __('lang.show') }}: <select name="" id="select-to-limit" class="form-control form-control-short w-10">
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                                <option value="20" selected="selected">20</option>
-                                <option value="30">30</option>
-                                <option value="40">40</option>
-                            </select>
+                            @include('admin.patial.limiter')
                             <button type="button" id="download-pdf" class="btn btn-info btn-sm">{{ __('lang.download') }} PDF</button>
                             <button type="button" id="download-csv" class="btn btn-warning btn-sm">{{ __('lang.download') }} CSV</button>
                             <button type="button" id="select-all" class="btn btn-sm btn-default">Select all</button>
@@ -46,7 +40,8 @@
                 {
                     formatter: 'rownum',
                     align: 'center',
-                    width: 40
+                    width: 40,
+                    sorter: 'number'
                 },
                 {
                     title: '{{ __('lang.property_type') }}',
