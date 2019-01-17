@@ -11,11 +11,6 @@
                         </h5>
                         <h5 class="text-right">
                             @include('admin.patial.limiter')
-                            <button type="button" id="download-pdf" class="btn btn-info btn-sm">{{ __('lang.download') }} PDF</button>
-                            <button type="button" id="download-csv" class="btn btn-warning btn-sm">{{ __('lang.download') }} CSV</button>
-                            <button type="button" id="select-all" class="btn btn-sm btn-default">Select all</button>
-                            <button type="button" id="deactivate-selected" class="btn btn-sm btn-danger hidden">{{ __('lang.disable_selected') }}</button>
-                            {{--<button type="button" id="delete-selected" class="btn btn-sm btn-danger hidden">{{ __('lang.remove_selected') }}</button>--}}
                             <a href="{{ action('Admin\Property\PropertyTypeController@add') }}" class="btn btn-primary btn-sm">{{ __('lang.add_new') }}</a>
                         </h5>
 

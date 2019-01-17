@@ -7,12 +7,8 @@
                 <div class="panel panel-default">
                     <div class="col-md-12 panel-heading">
                         <h5 class="pull-left">{{ __('lang.property') }}</h5>
-                        <h5 class="pull-right">
+                        <h5 class="text-right">
                             @include('admin.patial.limiter')
-                            <button type="button" id="download-pdf" class="btn btn-info btn-sm">{{ __('lang.download') }} PDF</button>
-                            <button type="button" id="download-csv" class="btn btn-warning btn-sm">{{ __('lang.download') }} CSV</button>
-                            <button type="button" id="select-all" class="btn btn-sm btn-default">Select all</button>
-                            <button type="button" id="deactivate-selected" class="btn btn-sm btn-danger hidden">{{ __('lang.disable_selected') }}</button>
                             <a href="{{ action('Admin\Property\PropertyController@add') }}" class="btn btn-primary btn-sm">{{ __('lang.add_new') }}</a>
                         </h5>
 
